@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 return [
-	'exception_details' => env('APP_DEBUG'),
+	'exception_details' => !env('APP_DEBUG'),
 	'request_path' => "api/*",
 	'exceptions' => [],
 	'handle_exceptions' => [
