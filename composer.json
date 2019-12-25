@@ -1,0 +1,34 @@
+{
+    "name": "beshoyfd/laravel-api-response",
+    "description": "restful api responses for laravel",
+    "keywords": ["laravel", "eloquent", "json", "restful", "api"],
+    "type": "Extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Beshoy Mounir",
+            "email": "beshoy.mounir0@gmail.com"
+        }
+    ],
+    "require": {
+      "php": ">=5.4"
+    },
+    "require-dev": {
+        "laravel/lumen-framework": "5.8.*",
+        "laravel/laravel": "5.8.*",
+        "barryvdh/laravel-ide-helper": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelApiResponse\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelApiResponse\\Providers\\ApiResponseServiceProvider"
+            ]
+        }
+    }
+}
