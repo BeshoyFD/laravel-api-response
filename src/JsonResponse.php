@@ -2,6 +2,9 @@
 
 namespace LaravelApiResponse;
 
+
+use Illuminate\Support\Facades\Route;
+
 class JsonResponse
 {
     private $data = array();
@@ -217,7 +220,10 @@ class JsonResponse
             'data' => $this->data,
             'errors' => $this->errors,
             'success' => $this->isSuccess(),
-            'status_code' => $this->statusCode
+            'status_code' => $this->statusCode,
+	        'api_version' => config("app.api_version") ?: config("app.api_latest_version"),
+	        'api_base_url' => url("/"),
+	        'api_endpoint' => "/".Route::current()->uri(),
         ];
 
         if (!is_null($this->token)) {
